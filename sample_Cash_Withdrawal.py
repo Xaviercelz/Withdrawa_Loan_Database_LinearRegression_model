@@ -1,6 +1,7 @@
 import time
 import random
 users = {}
+
 class User:
     def __init__(self, name, age, balance, account_pin, user_id):
         self.name = name
@@ -21,9 +22,11 @@ def create_account():
     if create == "y" or create == "yes":
         print("Initiating user creation process.")
         dots = (".", ".", ".")
-        for i in dots: 
-            time.sleep(1)
-            print(i)
+        #for i in dots: 
+         #   time.sleep(1)
+          #  print(i)
+    else:
+        return "Fix this later"
     
 
     name = input("Whats your name?:")
@@ -35,20 +38,30 @@ def create_account():
         confirm = int(input("confirm pin please: "))
         if pin == confirm: 
             counter += 1
-            return pin
         else:
             print("Pins don't match.")
     
     
     for i in range(5):
-        for char in characters:
-            random.choice(characters)
-            user_id += char
-
-
-
-        
+        chosen_char = random.choice(characters)
+        user_id += chosen_char
+    print(user_id)
+    
     return pin, name, age, balance, user_id
+
+       # what is this loop doing
+       # 1. Its basically gonna iterate through this script 5 times until it gets a pin
+       # -Interate with a range of 5
+       #    -This cause us to loop 5 times(Check loop logic)
+       #    -Make a loop that has an iteration through the characters
+       #    
+       # I need this loop to cycle through a random character of the characters string,
+       # Once I get the  characters string to fill up the User_id variable we have to check the database to make sure that there
+       # Is not any other acounts in the database that are using this specific user.
+
+
+print("Account created.")        
+    
 
 
 
@@ -93,6 +106,7 @@ def main_menu():
    # Now I have to create the account and put it inside of the dictionaries
    # Create the user than put it inside of the user dictionary, have a unique userID and the key is the user ID
     # The value is the account of the unique user ID so that It matches
+
 main_menu()
 
 
