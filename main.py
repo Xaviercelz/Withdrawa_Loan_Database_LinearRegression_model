@@ -1,5 +1,5 @@
 import banking_system
-
+import banking_system
 
 
 
@@ -22,3 +22,7 @@ def main_menu():
         print("Bye")
 
 main_menu()
+
+
+def save_account(user):
+    pass

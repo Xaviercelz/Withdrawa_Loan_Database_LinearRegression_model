@@ -1,14 +1,14 @@
 import time
 import random
 
-class User:
-    def __init__(self, name, age, balance, account_pin, user_id):
+class Account:
+    def __init__(self, name, age, balance, account_pin, user_id, creditscore):
         self.name = name
         self.age = age
         self.balance = balance
         self.account_pin = account_pin
         self.user_id = user_id 
-
+        self.user_id = creditscore
 # create the object for users and the dictionary
 
 
@@ -46,10 +46,30 @@ def create_account():
         user_id += chosen_char
     print(user_id)
     
-    return pin, name, age, balance, user_id
+    creditscore = random.randint(300,840)
+
+    user = Account(pin, age, name, balance, user_id, creditscore)
+
+    return user 
+
+print(user)
 
 
-print("Account created.")        
+
+
+
+### What is the current problem that I must solve?
+## The current problem is that I have to create a system that assigns a random credit score that can't be less than 300 but more than 840.
+# How would I do this?
+# We need to grab the numbers for the numbers constant
+# Make a loop that loops through this loop until you create a number that is >= 840 or <= 300
+# After it does that assign it to creit score for that account is create.
+
+
+# We also have to confirm that there isn't a user that has the same unique user id that is apart of that account aleady
+user = create_account()
+
+       
     
 
 
